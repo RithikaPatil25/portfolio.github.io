@@ -1,62 +1,154 @@
 <!DOCTYPE html>
+<!--
+	Resto by GetTemplates.co
+	URL: https://gettemplates.co
+-->
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DAA Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" href="vendor/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/brands.css">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700|Josefin+Sans:300,400,700">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- Modernizr JS for IE8 support of HTML5 elements and media queries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
 </head>
-<body>
-    <header>
-        <h1>Hello, I'm Rithika Patil 👋</h1>
-        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
-    </header>
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
+	<div id="side-nav" class="sidenav">
+	<a href="javascript:void(0)" id="side-nav-close">&times;</a>
+	
+</div>	<div id="canvas-overlay"></div>
+	<div class="boxed-page">
+		<nav id="navbar-header" class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand navbar-brand-center d-flex align-items-center p-0 only-mobile" href="/">
+            <img src="kletech.jpeg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-menu"></span>
+        </button>
 
-    <section>
-        <h2>🛠️ Projects</h2>
-        <ul>
-            <li><strong>Project <strong>: A short description of your project1.</li>
-        </ul>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <ul class="navbar-nav d-flex justify-content-between">
+                <div class="d-flex flex-lg-row flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Course</a>
+                    </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="learningref.html">Course Reflections</a>
+                </li>
+                </div>
+            </ul>
+            
+            <a class="navbar-brand navbar-brand-center d-flex align-items-center only-desktop" href="#">
+                <img src="kletech.jpeg" alt="">
+            </a>
+            <ul class="navbar-nav d-flex justify-content-between">
+                <div class="d-flex flex-lg-row flex-column">
+                    <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="team.html">Team</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="personal.html">Personal Details</a>
+                    </li>
+                </div>
+                <li class="nav-item">
+                    <a id="side-search-open" class="nav-link" href="#">
+                        <span class="lnr lnr-magnifier"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>		<div class="hero">
+  <div class="container" style="margin-top: 9%;">
+	<div class="row d-flex align-items-center">
+		<div class="col-lg-6 hero-left">
+		    <h2 class="display-4 mb-5">Learning Portfolio<br>Design and Analysis of Algorithms</h2>
+		   
+	    </div>
+	    <div class="col-lg-6 hero-right">
+	    	<div class="owl-carousel owl-theme hero-carousel">
+			    <div class="item">
+			    	<iframe src="https://lottie.host/embed/338d0e0a-bdf9-42fe-b410-c86a5903bb0b/FJNYyeAo10.lottie"></iframe>
+			    </div>
+			</div>
+	    </div>
+	</div>
+</div>	<br><br><br><br><hr>	<!-- Welcome Section -->
 
-        <h2>🚀 Skills</h2>
-        <ul>
-            <li>C++, Python</li>
-            <li>Data Structures and Algorithms</li>
-            <li>Web Development</li>
-        </ul>
+<!-- End of Welcome Section --><!-- Testimonial Section-->
+<section id="gtco-testimonial" class="overlay bg-fixed section-padding" 
+     class="container">
+        <div class="section-content">
+            <div class="heading-section text-center">
+                
+            </div>
+            <div class="row">
+                <!-- Testimonial -->
+                <div class="testi-content testi-carousel owl-carousel">
+                    <div class="testi-item">
+                        <i class="testi-icon fa fa-3x fa-quote-left"></i>
+                        <p class="testi-text">Continuous personal and professional development is the key to future.</p>
+                        <p class="testi-author">Brian Tracy</p>
+                        
+                    </div>
+                <!-- End of Testimonial -->
+            </div>
+        </div>
+    </div>
+</section><hr>
+<!-- End of Testimonial Section-->
+<div class="footer bg-dark text-center text-white py-4">
+    <h6 style="color: #8A2BE2;">Developed by</h6>
+    <h5 class="text-white">Rithika Patil</h5>
+    <div class="social-icons d-flex justify-content-center my-3">
+        <a href="#" class="btn btn-dark btn-square mx-2"><i class="fab fa-linkedin-in" style="color: #0077B5;"></i></a>
+        <a href="#" class="btn btn-dark btn-square mx-2"><i class="fab fa-instagram" style="color: #E4405F;"></i></a>
+        <a href="#" class="btn btn-dark btn-square mx-2"><i class="fab fa-github" style="color: #FFFFFF;"></i></a>
+    </div>
+    <p class="text-white-50 mb-0">© 2024 DESIGN AND ANALYSIS OF ALGORITHMS. All rights reserved.</p>
+</div>
+	<!-- External JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+	<script src="vendor/bootstrap/popper.min.js"></script>
+	<script src="vendor/bootstrap/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js "></script>
+	<script src="vendor/owlcarousel/owl.carousel.min.js"></script>
+	<script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.13/release/featherlight.min.js"></script>
+	<script src="vendor/stellar/jquery.stellar.js" type="text/javascript" charset="utf-8"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 
-        <h2>🌐 Find Me Online</h2>
-        <ul>
-            <li><a href="https://github.com/RithikaPatil25" target="_blank">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/Rithika_Patil" target="_blank">LinkedIn</a></li>
-        </ul>
-
-        <h2>Portfolio Topic</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Design And Analysis Of Algorithms</dd>
-
-            <dt>Course Code</dt>
-            <dd>24ECAC203</dd>
-
-            <dt>Name</dt>
-            <dd>Rithika Patil</dd>
-
-            <dt>SRN</dt>
-            <dd>01FE23BCS031</dd>
-
-            <dt>Course Instructor</dt>
-            <dd>Arundhati A</dd>
-
-            <dt>University</dt>
-            <dd>KLE Technological University</dd>
-
-            <dt>Portfolio Topic/Domain</dt>
-            <dd>DAA Course Project</dd>
-        </dl>
-
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
-    </section>
+	<!-- Main JS -->
+	<script src="js/app.min.js "></script>
 </body>
 </html>
