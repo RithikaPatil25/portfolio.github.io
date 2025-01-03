@@ -237,6 +237,201 @@
           </pre>
         </div>
       </div>
+	       <button class="toggle-button" onclick="toggleVisibility('Project_Implementation_code')">
+           BFS Pseudocode
+        </button>
+	       <div id="project_Implementation" class="implementation">
+          <pre>
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <limits.h>
+using namespace std;
+
+// Structure for a user
+struct User {
+    int id;
+    string name;
+    string contact;
+};
+
+// Structure for a ride
+struct Ride {
+    int id;
+    int userId;
+    string startLocation;
+    string destination;
+    int distance;
+    int seatsAvailable;
+};
+
+// Structure for an edge in the graph
+struct Edge {
+    int source;
+    int destination;
+    int weight;
+};
+
+vector<User> users;
+vector<Ride> rides;
+vector<Edge> edges;
+vector<string> locations;
+int userIdCounter = 1;
+int rideIdCounter = 1;
+
+// Helper function to get location index
+int getLocationIndex(const string &location) {
+    auto it = find(locations.begin(), locations.end(), location);
+    if (it == locations.end()) {
+        locations.push_back(location);
+        return locations.size() - 1;
+    }
+    return it - locations.begin();
+}
+
+// Function to register a new user
+void registerUser() {
+    User user;
+    user.id = userIdCounter++;
+    cout << "Enter your name: ";
+    cin.ignore();
+    getline(cin, user.name);
+    cout << "Enter your contact: ";
+    getline(cin, user.contact);
+    users.push_back(user);
+    cout << "User registered successfully! Your User ID is: " << user.id << endl;
+}
+
+// Function to post a ride
+void postRide() {
+    Ride ride;
+    cout << "Enter your User ID: ";
+    cin >> ride.userId;
+    auto userExists = find_if(users.begin(), users.end(), [&](User &u) { return u.id == ride.userId; });
+    if (userExists == users.end()) {
+        cout << "User ID not found! Please register first.\n";
+        return;
+    }
+
+    ride.id = rideIdCounter++;
+    cout << "Enter start location: ";
+    cin.ignore();
+    getline(cin, ride.startLocation);
+    cout << "Enter destination: ";
+    getline(cin, ride.destination);
+    cout << "Enter distance (in km): ";
+    cin >> ride.distance;
+    cout << "Enter seats available: ";
+    cin >> ride.seatsAvailable;
+
+    int startIndex = getLocationIndex(ride.startLocation);
+    int destIndex = getLocationIndex(ride.destination);
+
+    edges.push_back({startIndex, destIndex, ride.distance});
+    rides.push_back(ride);
+
+    cout << "Ride posted successfully! Ride ID is: " << ride.id << endl;
+}
+
+// Bellman-Ford algorithm to find shortest paths
+void bellmanFord(int source, int destination) {
+    int n = locations.size();
+    vector<int> distance(n, INT_MAX);
+    vector<int> predecessor(n, -1);
+
+    distance[source] = 0;
+
+    for (int i = 0; i < n - 1; ++i) {
+        for (const auto &edge : edges) {
+            if (distance[edge.source] != INT_MAX && distance[edge.source] + edge.weight < distance[edge.destination]) {
+                distance[edge.destination] = distance[edge.source] + edge.weight;
+                predecessor[edge.destination] = edge.source;
+            }
+        }
+    }
+
+    for (const auto &edge : edges) {
+        if (distance[edge.source] != INT_MAX && distance[edge.source] + edge.weight < distance[edge.destination]) {
+            cout << "Negative weight cycle detected!\n";
+            return;
+        }
+    }
+
+    if (distance[destination] == INT_MAX) {
+        cout << "No path exists between the specified locations.\n";
+        return;
+    }
+
+    cout << "Shortest distance: " << distance[destination] << " km\n";
+    cout << "Path: ";
+
+    vector<int> path;
+    for (int at = destination; at != -1; at = predecessor[at]) {
+        path.push_back(at);
+    }
+    reverse(path.begin(), path.end());
+
+    for (size_t i = 0; i < path.size(); ++i) {
+        cout << locations[path[i]];
+        if (i != path.size() - 1) cout << " -> ";
+    }
+    cout << endl;
+}
+
+// Function to search for rides using Bellman-Ford
+void searchRides() {
+    string start, destination;
+    cout << "Enter start location: ";
+    cin.ignore();
+    getline(cin, start);
+    cout << "Enter destination: ";
+    getline(cin, destination);
+
+    int startIndex = getLocationIndex(start);
+    int destIndex = getLocationIndex(destination);
+
+    bellmanFord(startIndex, destIndex);
+}
+
+// Main menu
+void menu() {
+    int choice;
+    do {
+        cout << "\nRide Sharing App Menu:\n";
+        cout << "1. Register User\n";
+        cout << "2. Post a Ride\n";
+        cout << "3. Search for Rides\n";
+        cout << "4. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+            case 1:
+                registerUser();
+                break;
+            case 2:
+                postRide();
+                break;
+            case 3:
+                searchRides();
+                break;
+            case 4:
+                cout << "Exiting the application.\n";
+                break;
+            default:
+                cout << "Invalid choice! Please try again.\n";
+        }
+    } while (choice != 4);
+}
+
+int main() {
+    menu();
+    return 0;
+}
+	 </pre>
+        </div>
+      </div>
       <!-- SDG and Images Section -->
 
 
